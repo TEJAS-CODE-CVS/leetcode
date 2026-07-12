@@ -6,7 +6,7 @@ public:
         int j = i;
         int count = 0 ;
 
-        for(i = 0 ; i < size ; i++)
+        while(i < size)
         {
         
           
@@ -24,7 +24,7 @@ public:
           
           }
           
-
+        i++;
         
         } 
 
