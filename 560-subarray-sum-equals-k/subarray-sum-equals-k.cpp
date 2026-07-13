@@ -3,28 +3,20 @@ public:
     int subarraySum(vector<int>& nums, int k) {
         int size = nums.size();
         int i = 0 ;
-        int j = i;
-        int count = 0 ;
-
-        while(i < size)
-        {
+        map<int,int> map;
+        map[0] = 1;
         
-          
-          int sum = 0;
-          
-          for(j = i ; j < size ; j ++)
-          {
-            
-            sum += nums[j];
-            
-            if(sum == k)
-            {
-                count++;
-            }
-          
-          }
-          
-        i++;
+        int prefix = 0 ;
+        int count = 0 ;
+        
+
+        for(i = 0 ; i < size ; i++)
+        {        
+          prefix += nums[i];
+        
+          int remove = prefix - k; 
+          count += map[remove];
+          map[prefix] += 1 ;
         
         } 
 
