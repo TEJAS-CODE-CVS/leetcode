@@ -14,8 +14,8 @@ public:
         {        
           prefix += nums[i];
         
-          int remove = prefix - k; 
-          count += map[remove];
+          int neededprefix = prefix - k; 
+          count += map[neededprefix];
           map[prefix] += 1 ;
         
         } 
