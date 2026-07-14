@@ -15,24 +15,22 @@ public:
         }
         
           
-           suffix[size - 1] = 1 ; 
+           int suffixproduct = 1 ;
 
         
-        for(int i = size - 2 ; i >= 0 ; i--)
+        for(int i = size - 1 ; i >= 0 ; i--)
         {
-            suffix[i] = suffix[i+1] * nums[i+1];
+            prefix[i] = prefix[i] * suffixproduct ;
+            suffixproduct = nums[i] * suffixproduct ;
         }
 
-        vector<int> ans(size)  ;
+        
 
 
-        for(int i = 0 ; i < size ; i++)
-        {
-             ans[i] = prefix[i] * suffix[i] ;
-        }
+        
 
 
-    return ans ;
+    return prefix ;
 
 
     }
