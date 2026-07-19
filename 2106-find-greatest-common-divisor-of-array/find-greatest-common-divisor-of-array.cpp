@@ -10,7 +10,14 @@ public:
             maximum = max(maximum , nums[i]);
         }
         
+         while(maximum != 0)
+         {
+            int temp = maximum ;
+            maximum = minimum % maximum ;
+            minimum = temp ;
+         }
+        
 
-        return gcd(minimum , maximum);
+        return minimum;
     }
 };
