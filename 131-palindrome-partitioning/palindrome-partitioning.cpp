@@ -34,23 +34,13 @@ public:
 
     bool ispalindrome(string part)
     {
-         int i = 0 ;
-         int j = part.size() - 1 ;
+        string s = part ;
 
-         while(i<j)
-         {
-            if(part[i] != part[j] )
-            {
-                return false ;
-            }
-         
-           i++;
-           j--;
-         
-         }
-    
-      return true ;
-    
+        reverse(s.begin() , s.end());
+
+        return part == s ;
+
+
     }
 
 };
